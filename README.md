@@ -43,7 +43,7 @@ I work across the stack and on **computer vision**, **robotics / SLAM**, and **g
 
 <p align="left">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=codeliveyou&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub stats for codeliveyou" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codeliveyou&layout=compact&theme=tokyonight&hide_border=true" alt="Most used languages on GitHub" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codeliveyou&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5" alt="Most used languages on GitHub" />
 </p>
 
 <p align="center">
