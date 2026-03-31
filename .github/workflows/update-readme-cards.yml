@@ -14,34 +14,45 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    # github-readme-stats only reads PAT_1…PAT_n from the environment; the token
-    # must be visible to Node (some composite-action setups omit nested env).
     env:
+      # github-readme-stats retryer only picks up PAT_1, PAT_2, …
       PAT_1: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v1.1.0
+      - uses: actions/setup-node@v4
         with:
-          card: stats
-          options: "username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"
-          path: profile/stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: "22"
 
-      - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v1.1.0
-        with:
-          card: top-langs
-          options: "username=${{ github.repository_owner }}&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5"
-          path: profile/top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install generator (same code as stats-organization action)
+        run: |
+          git clone --depth 1 --branch v1.1.0 https://github.com/stats-organization/github-readme-stats-action.git /tmp/grs-action
+          cd /tmp/grs-action
+          npm ci --omit=dev --ignore-scripts
 
-      - name: Commit cards
+      - name: Write profile/stats.svg and profile/top-langs.svg
+        working-directory: /tmp/grs-action
+        env:
+          OWNER: ${{ github.repository_owner }}
+          WORKSPACE: ${{ github.workspace }}
+        run: |
+          mkdir -p "$WORKSPACE/profile"
+          export INPUT_CARD=stats
+          export INPUT_OPTIONS="username=${OWNER}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"
+          export INPUT_PATH="${WORKSPACE}/profile/stats.svg"
+          node index.js
+          export INPUT_CARD=top-langs
+          export INPUT_OPTIONS="username=${OWNER}&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5"
+          export INPUT_PATH="${WORKSPACE}/profile/top-langs.svg"
+          node index.js
+          test -s "${WORKSPACE}/profile/stats.svg"
+          test -s "${WORKSPACE}/profile/top-langs.svg"
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
+          git add profile/stats.svg profile/top-langs.svg
           git commit -m "chore: update README stat cards" || exit 0
           git push
