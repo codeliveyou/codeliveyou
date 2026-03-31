@@ -42,8 +42,8 @@ I work across the stack and on **computer vision**, **robotics / SLAM**, and **g
 ## GitHub activity
 
 <p align="left">
-  <img height="165" src="./profile/stats.svg" alt="GitHub stats for chronometric" />
-  <img height="165" src="./profile/top-langs.svg" alt="Most used languages on GitHub" />
+  <img height="165" src="https://raw.githubusercontent.com/chronometric/chronometric/main/profile/stats.svg" alt="GitHub stats for chronometric" />
+  <img height="165" src="https://raw.githubusercontent.com/chronometric/chronometric/main/profile/top-langs.svg" alt="Most used languages on GitHub" />
 </p>
 
 <p align="center">

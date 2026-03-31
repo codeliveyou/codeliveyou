@@ -14,12 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    # github-readme-stats only reads PAT_1…PAT_n from the environment; the token
+    # must be visible to Node (some composite-action setups omit nested env).
+    env:
+      PAT_1: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Generate stats card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v1.1.0
         with:
           card: stats
           options: "username=${{ github.repository_owner }}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"
@@ -27,7 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v1.1.0
         with:
           card: top-langs
           options: "username=${{ github.repository_owner }}&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5"
