@@ -15,8 +15,8 @@ jobs:
     permissions:
       contents: write
     env:
-      # github-readme-stats retryer only picks up PAT_1, PAT_2, …
-      PAT_1: ${{ secrets.GITHUB_TOKEN }}
+      # Prefer a classic PAT with read:user (repo secret STATS_PAT) if the default token hits limits.
+      PAT_1: ${{ secrets.STATS_PAT || secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -24,30 +24,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
 
-      - name: Install generator (same code as stats-organization action)
-        run: |
-          git clone --depth 1 --branch v1.1.0 https://github.com/stats-organization/github-readme-stats-action.git /tmp/grs-action
-          cd /tmp/grs-action
-          npm ci --omit=dev --ignore-scripts
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Write profile/stats.svg and profile/top-langs.svg
-        working-directory: /tmp/grs-action
+      - name: Render profile/stats.svg and profile/top-langs.svg
         env:
-          OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           WORKSPACE: ${{ github.workspace }}
-        run: |
-          mkdir -p "$WORKSPACE/profile"
-          export INPUT_CARD=stats
-          export INPUT_OPTIONS="username=${OWNER}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github"
-          export INPUT_PATH="${WORKSPACE}/profile/stats.svg"
-          node index.js
-          export INPUT_CARD=top-langs
-          export INPUT_OPTIONS="username=${OWNER}&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5"
-          export INPUT_PATH="${WORKSPACE}/profile/top-langs.svg"
-          node index.js
-          test -s "${WORKSPACE}/profile/stats.svg"
-          test -s "${WORKSPACE}/profile/top-langs.svg"
+        run: npm run render-cards
 
       - name: Commit and push
         run: |

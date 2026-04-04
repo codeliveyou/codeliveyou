@@ -1,0 +1,15 @@
+{
+  "name": "chronometric",
+  "private": true,
+  "type": "module",
+  "description": "GitHub profile README — stat cards generated locally in Actions (no public Vercel dependency).",
+  "scripts": {
+    "render-cards": "node scripts/render-cards.mjs"
+  },
+  "dependencies": {
+    "github-readme-stats": "github:anuraghazra/github-readme-stats"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
