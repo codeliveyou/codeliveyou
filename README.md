@@ -15,8 +15,11 @@
 
 ## About
 
-I build **web applications**, **Python services**, and performance-sensitive **C/C++** tooling. Public work spans **computer vision** (including Jupyter workflows), **robotics / SLAM**, and **geospatial** utilities, often as full-stack pairs (e.g. TypeScript front ends with Python backends).
+I’m a **Senior Software Engineer** specializing in **Python backend development, scalable web applications, REST APIs, and production-ready software systems.** My primary experience includes **Python, Django, Django REST Framework, FastAPI, Flask, PostgreSQL, Redis, Celery, Docker, and cloud-based services.**
 
+I build reliable backend architectures, high-performance APIs, database-driven applications, automation services, and full-stack systems, with a strong focus on clean architecture, maintainability, security, testing, and performance.
+
+I also have experience integrating **computer vision, AI/ML, geospatial processing, and data-intensive workloads** into Python-based applications and backend services.
 ---
 
 ## Languages
@@ -29,7 +32,7 @@ I build **web applications**, **Python services**, and performance-sensitive **C
 
 ## Focus
 
-- **Web & APIs** — TypeScript / JavaScript UIs, Python services, CSS layout and styling  
+- **Web & APIs** — Python services (`Django`, `FastAPI`, `Flask`, `REST APIs`), TypeScript / JavaScript UIs, CSS layout and styling  
 - **Computer vision** — imaging pipelines, notebooks (`cv-helper`, `nasal-endoscope`, and similar)  
 - **Robotics & SLAM** — C++ projects such as `slam`, `sp-slam`  
 - **Geospatial** — Python tooling (e.g. `geo-solver`)  
@@ -40,7 +43,7 @@ I build **web applications**, **Python services**, and performance-sensitive **C
 ## Stack
 
 <p align="left">
-  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=py,ts,js,cpp,c,cs,html,css,git&perline=9" alt="Python, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" /></a>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=py,django,flask,fastapi, ts,js,cpp,c,cs,html,css,git&perline=9" alt="Python, Django, Flask, FastAPI, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" /></a>
 </p>
 
 ---
