@@ -1,6 +1,6 @@
 <div align="center">
 
-# chronometric
+# Mandip Rai
 
 **Senior software engineer** — full-stack, systems, and applied computer vision.
 
