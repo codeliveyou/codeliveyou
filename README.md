@@ -45,7 +45,7 @@ I also have experience integrating **computer vision, AI/ML, geospatial processi
 
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,django,fastapi,flask,ts,js,cpp,c,cs,html,css,git&perline=9" alt="Python, Django, FastAPI, Flask, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" />
+    <img src="https://skillicons.dev/icons?i=py,django,fastapi,flask,ts,js,cpp,c,cs,html,css,git&perline=12" alt="Python, Django, FastAPI, Flask, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" />
   </a>
 </p>
 
