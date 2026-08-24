@@ -20,6 +20,7 @@ I’m a **Senior Software Engineer** specializing in **Python backend developmen
 I build reliable backend architectures, high-performance APIs, database-driven applications, automation services, and full-stack systems, with a strong focus on clean architecture, maintainability, security, testing, and performance.
 
 I also have experience integrating **computer vision, AI/ML, geospatial processing, and data-intensive workloads** into Python-based applications and backend services.
+
 ---
 
 ## Languages
@@ -43,7 +44,9 @@ I also have experience integrating **computer vision, AI/ML, geospatial processi
 ## Stack
 
 <p align="left">
-  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=py,django,flask,fastapi, ts,js,cpp,c,cs,html,css,git&perline=9" alt="Python, Django, Flask, FastAPI, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" /></a>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,django,fastapi,flask,ts,js,cpp,c,cs,html,css,git&perline=9" alt="Python, Django, FastAPI, Flask, TypeScript, JavaScript, C++, C, C#, HTML, CSS, Git" />
+  </a>
 </p>
 
 ---
